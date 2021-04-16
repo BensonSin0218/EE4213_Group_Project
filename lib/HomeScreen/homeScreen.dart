@@ -13,6 +13,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  DateTime _lastPressedAt;
+
   @override
   void initState() {
     super.initState();
@@ -27,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return WillPopScope(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           elevation: 0,
           leading: IconButton(
@@ -327,7 +330,14 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
         )
-      )
+      ),
+      onWillPop: () async {
+        if (_lastPressedAt == null || DateTime.now().difference(_lastPressedAt) > Duration(seconds: 1)) {
+          _lastPressedAt = DateTime.now();
+          return false;
+        }
+        return true;
+      },
     );
   }
 }
