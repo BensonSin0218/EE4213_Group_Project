@@ -1,4 +1,4 @@
-# ee4213_group_project
+# EE4213 - Group Project
 
 A new Flutter project.
 
