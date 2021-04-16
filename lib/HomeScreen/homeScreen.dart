@@ -140,6 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+            // Popular Section
             Container(
               height: _bottomHeight - 157,
               child: Column(
@@ -148,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     flex: 5,
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        vertical: 10.0,
+                        vertical: 5.0,
                         horizontal: 10.0
                       ),
                       child: Column(
@@ -160,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   left: 5
                                 ),
                                 child: Text(
-                                  "Popular",
+                                  "Popular Recipes",
                                   style: TextStyle(
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold
@@ -190,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Row(
                               children: <Widget> [
                                 FoodCard(
-                                  image: "assets/images/ramen.jpg",
+                                  image: "assets/images/foods/ramen.jpg",
                                   title: "Ramen",
                                   country: "Japanese",
                                   tapFunction: () {
@@ -199,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   },
                                 ),
                                 FoodCard(
-                                  image: "assets/images/400coffee.jpg",
+                                  image: "assets/images/foods/400coffee.jpg",
                                   title: "400 Coffee",
                                   country: "Korea",
                                   tapFunction: () {
@@ -208,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   },
                                 ),
                                 FoodCard(
-                                  image: "assets/images/cheesecake.jpg",
+                                  image: "assets/images/foods/cheesecake.jpg",
                                   title: "Cheesecake",
                                   country: "Western",
                                   tapFunction: () {
@@ -217,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   },
                                 ),
                                 FoodCard(
-                                  image: "assets/images/sweetSourPork.jpg",
+                                  image: "assets/images/foods/sweetSourPork.jpg",
                                   title: "Sweet Sour Pork",
                                   country: "Hong Kong",
                                   tapFunction: () {
@@ -232,11 +233,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     )
                   ),
+                  // Latest Section
                   Expanded(
                     flex: 5,
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        vertical: 10.0,
+                        vertical: 5.0,
                         horizontal: 10.0
                       ),
                       child: Column(
@@ -248,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   left: 5
                                 ),
                                 child: Text(
-                                  "Latest",
+                                  "What's New?",
                                   style: TextStyle(
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold
@@ -278,35 +280,35 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Row(
                               children: <Widget> [
                                 FoodCard(
-                                  image: "assets/images/ramen.jpg",
-                                  title: "Ramen",
-                                  country: "Japanese",
+                                  image: "assets/images/foods/mangoPudding.jpg",
+                                  title: "Mango Pudding",
+                                  country: "England",
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 1 is pressed!");
                                   },
                                 ),
                                 FoodCard(
-                                  image: "assets/images/400coffee.jpg",
-                                  title: "400 Coffee",
-                                  country: "Korea",
+                                  image: "assets/images/foods/chickenPot.jpg",
+                                  title: "Chicken Pot",
+                                  country: "Hong Kong",
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 2 is pressed!");
                                   },
                                 ),
                                 FoodCard(
-                                  image: "assets/images/cheesecake.jpg",
-                                  title: "Cheesecake",
-                                  country: "Western",
+                                  image: "assets/images/foods/pizza.jpg",
+                                  title: "Pizza",
+                                  country: "Italiana",
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 3 is pressed!");
                                   },
                                 ),
                                 FoodCard(
-                                  image: "assets/images/sweetSourPork.jpg",
-                                  title: "Sweet Sour Pork",
+                                  image: "assets/images/foods/swissChickenWings.jpg",
+                                  title: "Swiss Chicken Wings",
                                   country: "Hong Kong",
                                   tapFunction: () {
                                     // Debug message

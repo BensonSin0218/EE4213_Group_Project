@@ -3,6 +3,8 @@ import "package:flutter/material.dart";
 
 import "SplashScreen/splashScreen.dart";
 
+const String APPTITLE = "Day Day Cooking";
+
 void main() {
   runApp(MyApp());
 }
@@ -12,12 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Day Day Cooking",
+      title: APPTITLE,
       theme: ThemeData(
         primaryColor: Colors.pink[300],
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
-      home: DayDayCooking(appTitle: "Day Day Cooking"),
+      home: DayDayCooking(appTitle: APPTITLE),
       builder: BotToastInit(),
       navigatorObservers: [BotToastNavigatorObserver()]
     );

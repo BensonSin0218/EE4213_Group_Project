@@ -25,8 +25,8 @@ class FoodCard extends StatelessWidget {
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0, 10),
-                    blurRadius: 50.0,
+                    blurRadius: 10.0,
+                    offset: Offset(0, 5),
                     color: Colors.pink[300].withOpacity(0.25)
                   )
                 ],
@@ -50,29 +50,33 @@ class FoodCard extends StatelessWidget {
                     height: 10.0
                   ),
                   Container(
+                    width: _size.width * 0.45,
                     padding: EdgeInsets.only(
                       bottom: 10.0,
                       left: 10.0,
                       right: 10.0
                     ),
-                    child: Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget> [
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: "$title\n".toUpperCase(),
-                                style: Theme.of(context).textTheme.button.copyWith(
-                                  fontWeight: FontWeight.bold
-                                )
-                              ),
-                              TextSpan(
-                                text: "$country".toUpperCase(),
-                                style: TextStyle(
-                                  color: Colors.pink[300].withOpacity(0.5)
-                                )
-                              )
-                            ]
+                        Container(
+                          height: 25.0,
+                          child: Text(
+                            "$title\n".toUpperCase(),
+                            style: Theme.of(context).textTheme.button.copyWith(
+                              fontWeight: FontWeight.bold
+                            ),
+                            overflow: TextOverflow.ellipsis
+                          )
+                        ),
+                        Container(
+                          height: 25.0,
+                          child: Text(
+                            "$country".toUpperCase(),
+                            style: TextStyle(
+                              color: Colors.pink[300].withOpacity(0.5)
+                            ),
+                            overflow: TextOverflow.ellipsis
                           )
                         )
                       ],
