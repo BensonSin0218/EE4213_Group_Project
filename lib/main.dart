@@ -1,6 +1,8 @@
 import "package:bot_toast/bot_toast.dart";
 import "package:flutter/material.dart";
 
+import "SplashScreen/splashScreen.dart";
+
 void main() {
   runApp(MyApp());
 }
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.pink[300],
+        primarySwatch: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
       home: EE4213(),
@@ -32,6 +34,8 @@ class EE4213 extends StatefulWidget {
 class _EE4213State extends State<EE4213> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: SplashScreen()
+    );
   }
 }
