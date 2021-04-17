@@ -191,6 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
+                            physics: BouncingScrollPhysics(),
                             child: Row(
                               children: <Widget> [
                                 FoodCard(
@@ -280,6 +281,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
+                            physics: BouncingScrollPhysics(),
                             child: Row(
                               children: <Widget> [
                                 FoodCard(

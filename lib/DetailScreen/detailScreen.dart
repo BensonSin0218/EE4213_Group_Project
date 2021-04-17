@@ -180,6 +180,73 @@ class _DetailScreenState extends State<DetailScreen> {
                                         ),
                                       ),
                                     ),
+
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10.0, vertical: 8.0),
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            "Servings:",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .headline5
+                                                .copyWith(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.pink,
+                                                ),
+                                          ),
+
+                                          Spacer(),
+                                          Spacer(),
+
+                                          //minus 1 button
+                                          IconButton(
+                                            onPressed: () {
+                                              setState(() {
+                                                if (_person - 1 >= 1)
+                                                  _person -= 1;
+                                              });
+                                            },
+                                            icon: Icon(
+                                              Icons.remove_circle_outline_rounded,
+                                              size: 30.0,
+                                              color: _person == 1 ? Colors.blueGrey[200] : Colors.pink,
+                                            ),
+                                          ),
+
+                                          Spacer(),
+
+                                          //amount
+                                          Text(
+                                            _person.toString(),
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .headline5
+                                                .copyWith(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.pink,
+                                                ),
+                                          ),
+
+                                          Spacer(),
+
+                                          //add 1 button
+                                          IconButton(
+                                            onPressed: () {
+                                              setState(() => _person += 1);
+                                            },
+                                            icon: Icon(
+                                              Icons.add_circle_outline_rounded,
+                                              size: 30.0,
+                                              color: Colors.pink,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+
+
                                     Padding(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 10.0, vertical: 8.0),
@@ -335,53 +402,9 @@ class _DetailScreenState extends State<DetailScreen> {
                                       amount: 0.0,
                                       unit: japaneseRamen[11],
                                     ),
-                                    SizedBox(height: 24.0),
+                                    SizedBox(height: 32.0),
                                     Row(
                                       children: [
-                                        Spacer(),
-                                        //minus 1 button
-                                        IconButton(
-                                          onPressed: () {
-                                            setState(() {
-                                              if (_person - 1 >= 1)
-                                                _person -= 1;
-                                            });
-                                          },
-                                          icon: Icon(
-                                            Icons.remove_circle_outline_rounded,
-                                            size: 30.0,
-                                            color: Colors.pink,
-                                          ),
-                                        ),
-
-                                        Spacer(),
-
-                                        //amount
-                                        Text(
-                                          _person.toString(),
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyText2
-                                              .copyWith(
-                                                fontSize: 30.0,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.pink,
-                                              ),
-                                        ),
-
-                                        Spacer(),
-
-                                        //add 1 button
-                                        IconButton(
-                                          onPressed: () {
-                                            setState(() => _person += 1);
-                                          },
-                                          icon: Icon(
-                                            Icons.add_circle_outline_rounded,
-                                            size: 30.0,
-                                            color: Colors.pink,
-                                          ),
-                                        ),
 
                                         Spacer(),
                                         Spacer(),
@@ -390,7 +413,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                         //add to cart button
                                         SizedBox(
                                           width: size.width * 0.5,
-                                          height: size.height * 0.08,
+                                          height: size.height * 0.07,
                                           child: ElevatedButton(
                                             onPressed: () {},
                                             style: ElevatedButton.styleFrom(
