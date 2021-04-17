@@ -12,6 +12,7 @@ dependencies:
 
   bot_toast: ^3.0.5
   youtube_player_flutter: ^8.0.0
+  share: ^2.0.1
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
