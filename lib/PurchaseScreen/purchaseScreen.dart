@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 
+import "../Data/Ramen/ramenInformation.dart";
+
 class PurchaseScreen extends StatefulWidget {
   PurchaseScreen({Key key, this.foodTitle}) : super(key: key);
 
@@ -11,43 +13,74 @@ class PurchaseScreen extends StatefulWidget {
 
 class _PurchaseScreenState extends State<PurchaseScreen> {
   DateTime _lastPressedAt;
+  String title;
 
   @override
   void initState() {
     super.initState();
+
+    title= widget.foodTitle;
   }
 
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
 
-    double _topHeight = _size.height * 0.2;
-    double _bottomHeight = _size.height * 0.8;
+    double _topHeight = _size.height * 0.3;
+    double _bottomHeight = _size.height * 0.7;
 
     return WillPopScope(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          brightness: Brightness.dark,
           elevation: 0,
           leading: IconButton(
-            icon: const Icon(Icons.menu),
+            icon: Icon(Icons.arrow_back_ios),
             color: Colors.white,
             iconSize: 26.0,
-            onPressed: () {}
-          ),
-          centerTitle: false,
-          title: Text(
-            "",
-            style: TextStyle(
-              fontFamily: "Lobster"
-            ),
-            textAlign: TextAlign.right,
-          ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            }
+          )
         ),
         body: Column(
           children: <Widget> [
             Container(
-
+              height: _topHeight,
+              child: Stack(
+                fit: StackFit.expand,
+                children: <Widget> [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(36.0),
+                        bottomRight: Radius.circular(36.0)
+                      ),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        colorFilter: new ColorFilter.mode(
+                          Colors.white.withOpacity(0.3),
+                          BlendMode.difference
+                        ),
+                        image: ExactAssetImage("assets/images/foods/ramen.jpg"),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      "$title",
+                      style: Theme.of(context).textTheme.headline4.copyWith(
+                        fontFamily: "Lobster",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white
+                      ),
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         )

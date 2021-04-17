@@ -1,8 +1,8 @@
-import 'package:ee4213_group_project/DetailScreen/detailRow.dart';
-import 'package:flutter/material.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import "package:flutter/material.dart";
+import "package:youtube_player_flutter/youtube_player_flutter.dart";
 
-import 'detailAppBar.dart';
+import "Components/detailAppBar.dart";
+import "Components/detailRow.dart";
 
 class DetailScreen extends StatefulWidget {
   @override
