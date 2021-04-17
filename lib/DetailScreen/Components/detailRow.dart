@@ -23,7 +23,7 @@ class _DetailRowState extends State<DetailRow> {
             widget.name,
             style: Theme.of(context).textTheme.bodyText2.copyWith(
                   fontSize: 18.0,
-                  color: Colors.pink[300],
+                  color: Colors.pink[400],
                 ),
           ),
           Spacer(),
@@ -33,7 +33,7 @@ class _DetailRowState extends State<DetailRow> {
                 : widget.amount.toString() + widget.unit,
             style: Theme.of(context).textTheme.bodyText2.copyWith(
                   fontSize: 18.0,
-                  color: Colors.blueGrey[500],
+                  color: Colors.blueGrey[700],
                 ),
           ),
         ],

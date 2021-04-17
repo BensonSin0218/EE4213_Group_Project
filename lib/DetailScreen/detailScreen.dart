@@ -96,6 +96,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       children: [
                         Container(
                           margin: EdgeInsets.only(top: 70.0),
+                          height: size.height * 0.8,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
@@ -177,7 +178,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                                       .remove_circle_outline_rounded,
                                                   size: 30.0,
                                                   color: _person == 1
-                                                      ? Colors.blueGrey[200]
+                                                      ? Colors.blueGrey[300]
                                                       : Colors.pink,
                                                 ),
                                               ),
