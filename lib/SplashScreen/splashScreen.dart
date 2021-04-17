@@ -1,6 +1,12 @@
 import "package:flutter/material.dart";
 
+import "../HomeScreen/homeScreen.dart";
+
 class SplashScreen extends StatefulWidget {
+  SplashScreen({Key key, this.appTitle}) : super(key: key);
+
+  final String appTitle;
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -9,6 +15,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    _navigateToHome();
+  }
+
+  Future<void> _navigateToHome() async {
+    await Future.delayed(Duration(seconds: 2), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(appTitle: widget.appTitle)
+        )
+      );
+    });
   }
 
   @override
@@ -37,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     height: 10.0,
                   ),
                   Text(
-                    "Day Day Cooking",
+                    widget.appTitle,
                     style: Theme.of(context).textTheme.headline4.copyWith(
                       fontFamily: "Lobster",
                       fontWeight: FontWeight.bold,

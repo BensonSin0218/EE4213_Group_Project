@@ -4,40 +4,44 @@ import "package:flutter/material.dart";
 import 'DetailScreen/detailScreen.dart';
 import "SplashScreen/splashScreen.dart";
 
+const String APPTITLE = "Day Day Cooking";
+
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: APPTITLE,
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primaryColor: Colors.pink[300],
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
-      home: EE4213(),
+      home: DayDayCooking(appTitle: APPTITLE),
       builder: BotToastInit(),
       navigatorObservers: [BotToastNavigatorObserver()]
     );
   }
 }
 
-class EE4213 extends StatefulWidget {
-  EE4213({Key key}) : super(key: key);
+class DayDayCooking extends StatefulWidget {
+  DayDayCooking({Key key, this.appTitle}) : super(key: key);
+
+  final String appTitle;
 
   @override
-  _EE4213State createState() => _EE4213State();
+  _DayDayCookingState createState() => _DayDayCookingState();
 }
 
-class _EE4213State extends State<EE4213> {
+class _DayDayCookingState extends State<DayDayCooking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SplashScreen()
-      // body: DetailScreen()
+      body: SplashScreen(appTitle: widget.appTitle),
+      // body: DetailScreen(),
     );
   }
 }
