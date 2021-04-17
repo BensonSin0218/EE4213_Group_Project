@@ -40,8 +40,7 @@ class _DayDayCookingState extends State<DayDayCooking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: SplashScreen(appTitle: widget.appTitle),
-      body: DetailScreen(),
+      body: SplashScreen(appTitle: widget.appTitle),
     );
   }
 }
