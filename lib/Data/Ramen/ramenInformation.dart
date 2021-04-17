@@ -25,3 +25,23 @@ List<dynamic> japaneseRamen = [
   "Sea Sedge", "2", "",
   "Corn", "", " appropriate amount",
 ];
+
+List<dynamic> price = [
+  130.0,
+  10.0,
+  10.0,
+  10.0,
+  15.0,
+  20.0,
+  3.0,
+  3.0,
+  2.0,
+  35.0,
+  5.0,
+  3.0,
+  10.0,
+  20.0,
+  20.0,
+  2.5,
+  5.0
+];

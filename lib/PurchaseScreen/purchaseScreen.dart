@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 
 import "../Data/Ramen/ramenInformation.dart";
+import "../PaymentScreen/paymentScreen.dart";
 
 import "Components/foodItem.dart";
 
@@ -37,6 +38,15 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
 
     // Debug message
     print("[INFO] amounts: $amounts");
+  }
+
+  String totalPrice() {
+    double _total_price = 0.0;
+
+    for(int i = 0; i < 17; i++)
+      _total_price += price[i] * amounts[i];
+
+    return _total_price.toString();
   }
 
   @override
@@ -142,6 +152,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 0,
                       position: [0, 1, 2],
                       foodList: barbecuedPork,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -150,6 +161,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 1,
                       position: [6, 7, 8],
                       foodList: barbecuedPork,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -158,6 +170,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 2,
                       position: [9, 10, 11],
                       foodList: barbecuedPork,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -166,6 +179,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 3,
                       position: [12, 13, 14],
                       foodList: barbecuedPork,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -174,6 +188,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 4,
                       position: [15, 16, 17],
                       foodList: barbecuedPork,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -182,6 +197,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 5,
                       position: [18, 19, 20],
                       foodList: barbecuedPork,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -190,6 +206,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 6,
                       position: [21, 22, 23],
                       foodList: barbecuedPork,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -198,6 +215,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 7,
                       position: [24, 25, 26],
                       foodList: barbecuedPork,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -206,6 +224,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 8,
                       position: [27, 28, 29],
                       foodList: barbecuedPork,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -232,6 +251,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 9,
                       position: [0, 1, 2],
                       foodList: porkBoneBroth,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -240,6 +260,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 10,
                       position: [3, 4, 5],
                       foodList: porkBoneBroth,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -248,6 +269,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 11,
                       position: [6, 7, 8],
                       foodList: porkBoneBroth,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -256,6 +278,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 12,
                       position: [9, 10, 11],
                       foodList: porkBoneBroth,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -264,6 +287,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 13,
                       position: [12, 13, 14],
                       foodList: porkBoneBroth,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -290,6 +314,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 14,
                       position: [0, 1, 2],
                       foodList: japaneseRamen,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -298,6 +323,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 15,
                       position: [3, 4, 5],
                       foodList: japaneseRamen,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
                     ),
@@ -306,8 +332,83 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       itemNumber: 16,
                       position: [6, 7, 8],
                       foodList: japaneseRamen,
+                      price: price,
                       addItem: addItem,
                       subItem: subItem
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        right: 10.0
+                      ),
+                      child: Row(
+                        children: <Widget> [
+                          Text(
+                            "Total",
+                            style: Theme.of(context).textTheme.bodyText2.copyWith(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.pink,
+                              decoration:
+                                  TextDecoration.underline,
+                            )
+                          ),
+                          Spacer(),
+                          Text(
+                            "\$" + totalPrice(),
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.pink,
+                            )
+                          )
+                        ]
+                      )
+                    ),
+                    SizedBox(
+                      height: 20.0
+                    ),
+                    SizedBox(
+                      height: _size.height * 0.07,
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget> [
+                            Icon(
+                              Icons.check_circle_rounded,
+                              size: 28.0,
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              width: 5.0
+                            ),
+                            Text(
+                              "Confirm!",
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white
+                              )
+                            )
+                          ],
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.pink,
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(36.0),
+                          )
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => PaymentScreen(
+                                foodTitle: title,
+                              )
+                            )
+                          );
+                        },
+                      )
                     )
                   ],
                 ),
