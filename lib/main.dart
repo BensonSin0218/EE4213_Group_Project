@@ -1,6 +1,7 @@
 import "package:bot_toast/bot_toast.dart";
 import "package:flutter/material.dart";
 
+import 'DetailScreen/detailScreen.dart';
 import "SplashScreen/splashScreen.dart";
 
 void main() {
@@ -36,6 +37,7 @@ class _EE4213State extends State<EE4213> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SplashScreen()
+      // body: DetailScreen()
     );
   }
 }
