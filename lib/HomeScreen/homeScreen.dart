@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
 
 import "../DetailScreen/detailScreen.dart";
-import "../PurchaseScreen/purchaseScreen.dart";
 
 import "Components/foodCard.dart";
 
@@ -113,8 +112,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(36.0),
                         boxShadow: [
                           BoxShadow(
-                            offset: Offset(0, 10),
-                            blurRadius: 50.0,
+                            blurRadius: 10.0,
+                            offset: Offset(0, 5),
                             color: Colors.pink[300].withOpacity(0.25)
                           )
                         ]
@@ -315,7 +314,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 FoodCard(
                                   image: "assets/images/foods/pizza.jpg",
                                   title: "Pizza",
-                                  country: "Italiana",
+                                  country: "Italy",
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 3 is pressed!");
@@ -341,18 +340,7 @@ class _HomeScreenState extends State<HomeScreen> {
               )
             )
           ],
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.pages),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => PurchaseScreen(foodTitle: "Tonkotsu Ramen Noodle")
-              )
-            );
-          },
-        ),
+        )
       ),
       onWillPop: () async {
         if (_lastPressedAt == null || DateTime.now().difference(_lastPressedAt) > Duration(seconds: 1)) {

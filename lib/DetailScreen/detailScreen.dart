@@ -1,8 +1,12 @@
 import "package:flutter/material.dart";
 import "package:youtube_player_flutter/youtube_player_flutter.dart";
 
+import "../Data/Ramen/ramenInformation.dart";
+
 import "Components/detailAppBar.dart";
 import "Components/detailRow.dart";
+
+import "../PurchaseScreen/purchaseScreen.dart";
 
 class DetailScreen extends StatefulWidget {
   @override
@@ -12,71 +16,6 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   int _person = 1;
   String ramenURL = "https://www.youtube.com/watch?v=8j2lmsyy1VE";
-  List<dynamic> barbecuedPork = [
-    "Pork Shoulder Blade",
-    "600",
-    " g",
-    "Salad Oil",
-    "",
-    " appropriate amount",
-    "Ginger",
-    "3",
-    " slices",
-    "Scallion",
-    "1",
-    "",
-    "Garlic",
-    "5",
-    " cloves",
-    "Mirin",
-    "50",
-    " ml",
-    "Rice Wine",
-    "50",
-    " ml",
-    "Sugar",
-    "1",
-    " spoon",
-    "Soy Sauce",
-    "100",
-    " ml",
-    "Water",
-    "600",
-    " ml",
-  ];
-
-  List<dynamic> porkBoneBroth = [
-    "Stock",
-    "1",
-    " bowl",
-    "White Sesame",
-    "2",
-    " tbsp",
-    "Garlic",
-    "2",
-    " cloves",
-    "Milk",
-    "50",
-    " cc",
-    "Miso",
-    "1",
-    " tsp",
-  ];
-
-  List<dynamic> japaneseRamen = [
-    "Ramen",
-    "1",
-    " pack",
-    "Soft Boiled Egg",
-    "0.5",
-    "",
-    "Sea Sedge",
-    "2",
-    "",
-    "Corn",
-    "",
-    " appropriate amount",
-  ];
 
   YoutubePlayerController _controller;
 
@@ -415,7 +354,16 @@ class _DetailScreenState extends State<DetailScreen> {
                                           width: size.width * 0.5,
                                           height: size.height * 0.07,
                                           child: ElevatedButton(
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                  builder: (context) => PurchaseScreen(
+                                                    foodTitle: "Tonkotsu Ramen Noodle",
+                                                    serving: _person
+                                                  )
+                                                )
+                                              );
+                                            },
                                             style: ElevatedButton.styleFrom(
                                               primary: Colors.pink,
                                               shape: RoundedRectangleBorder(

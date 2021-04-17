@@ -2,10 +2,13 @@ import "package:flutter/material.dart";
 
 import "../Data/Ramen/ramenInformation.dart";
 
+import "Components/foodItem.dart";
+
 class PurchaseScreen extends StatefulWidget {
-  PurchaseScreen({Key key, this.foodTitle}) : super(key: key);
+  PurchaseScreen({Key key, this.foodTitle, this.serving}) : super(key: key);
 
   final String foodTitle;
+  final int serving;
 
   @override
   _PurchaseScreenState createState() => _PurchaseScreenState();
@@ -15,11 +18,34 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
   DateTime _lastPressedAt;
   String title;
 
+  List<int> amounts;
+
+  void addItem(int i) {
+    setState(() {
+      amounts[i] += 1;
+    });
+
+    // Debug message
+    print("[INFO] amounts: $amounts");
+  }
+
+  void subItem(int i) {
+    setState(() {
+      if (amounts[i] - 1 >= 0)
+        amounts[i] -= 1;
+    });
+
+    // Debug message
+    print("[INFO] amounts: $amounts");
+  }
+
   @override
   void initState() {
     super.initState();
 
-    title= widget.foodTitle;
+    title = widget.foodTitle;
+
+    amounts = List<int>.filled(17, widget.serving, growable: true);
   }
 
   @override
@@ -38,7 +64,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
           brightness: Brightness.dark,
           elevation: 0,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios),
+            icon: Icon(Icons.arrow_back_rounded),
             color: Colors.white,
             iconSize: 26.0,
             onPressed: () {
@@ -81,6 +107,211 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                   )
                 ],
               ),
+            ),
+            Container(
+              height: _bottomHeight,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                physics: BouncingScrollPhysics(),
+                padding: EdgeInsets.symmetric(
+                  vertical: 10.0,
+                  horizontal: 20.0
+                ),
+                child: Column(
+                  children: <Widget> [
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      padding: EdgeInsets.only(
+                        bottom: 10.0
+                      ),
+                      child: Text(
+                        "Barbecued Pork",
+                        style: Theme.of(context).textTheme.bodyText2.copyWith(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.pink,
+                          decoration:
+                              TextDecoration.underline,
+                          decorationStyle:
+                              TextDecorationStyle.double,
+                        )
+                      ),
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 0,
+                      position: [0, 1, 2],
+                      foodList: barbecuedPork,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 1,
+                      position: [6, 7, 8],
+                      foodList: barbecuedPork,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 2,
+                      position: [9, 10, 11],
+                      foodList: barbecuedPork,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 3,
+                      position: [12, 13, 14],
+                      foodList: barbecuedPork,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 4,
+                      position: [15, 16, 17],
+                      foodList: barbecuedPork,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 5,
+                      position: [18, 19, 20],
+                      foodList: barbecuedPork,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 6,
+                      position: [21, 22, 23],
+                      foodList: barbecuedPork,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 7,
+                      position: [24, 25, 26],
+                      foodList: barbecuedPork,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 8,
+                      position: [27, 28, 29],
+                      foodList: barbecuedPork,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      padding: EdgeInsets.only(
+                        bottom: 10.0
+                      ),
+                      child: Text(
+                        "Pork Bone Broth",
+                        style: Theme.of(context).textTheme.bodyText2.copyWith(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.pink,
+                          decoration:
+                              TextDecoration.underline,
+                          decorationStyle:
+                              TextDecorationStyle.double,
+                        )
+                      ),
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 9,
+                      position: [0, 1, 2],
+                      foodList: porkBoneBroth,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 10,
+                      position: [3, 4, 5],
+                      foodList: porkBoneBroth,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 11,
+                      position: [6, 7, 8],
+                      foodList: porkBoneBroth,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 12,
+                      position: [9, 10, 11],
+                      foodList: porkBoneBroth,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 13,
+                      position: [12, 13, 14],
+                      foodList: porkBoneBroth,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      padding: EdgeInsets.only(
+                        bottom: 10.0
+                      ),
+                      child: Text(
+                        "Ramen",
+                        style: Theme.of(context).textTheme.bodyText2.copyWith(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.pink,
+                          decoration:
+                              TextDecoration.underline,
+                          decorationStyle:
+                              TextDecorationStyle.double,
+                        )
+                      ),
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 14,
+                      position: [0, 1, 2],
+                      foodList: japaneseRamen,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 15,
+                      position: [3, 4, 5],
+                      foodList: japaneseRamen,
+                      addItem: addItem,
+                      subItem: subItem
+                    ),
+                    FoodItem(
+                      amounts: amounts,
+                      itemNumber: 16,
+                      position: [6, 7, 8],
+                      foodList: japaneseRamen,
+                      addItem: addItem,
+                      subItem: subItem
+                    )
+                  ],
+                ),
+              ),
             )
           ],
         )
@@ -95,3 +326,4 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
     );
   }
 }
+
