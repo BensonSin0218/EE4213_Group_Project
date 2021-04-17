@@ -400,7 +400,16 @@ class _DetailScreenState extends State<DetailScreen> {
                                         width: double.infinity,
                                         height: size.height * 0.07,
                                         child: ElevatedButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                builder: (context) => PurchaseScreen(
+                                                  foodTitle: recipeName,
+                                                  serving: _person,
+                                                )
+                                              )
+                                            );
+                                          },
                                           style: ElevatedButton.styleFrom(
                                             primary: Colors.pink,
                                             shape: RoundedRectangleBorder(

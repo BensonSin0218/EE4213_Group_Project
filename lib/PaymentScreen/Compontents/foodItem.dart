@@ -56,7 +56,7 @@ class FoodItem extends StatelessWidget {
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.pink,
-              )
+              ),
             ),
             IconButton(
               icon: Icon(
