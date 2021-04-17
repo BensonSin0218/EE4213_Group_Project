@@ -11,9 +11,9 @@ dependencies:
     sdk: flutter
 
   bot_toast: ^3.0.5
-  youtube_player_flutter: ^8.0.0
-  share: ^2.0.1
   cupertino_icons: ^1.0.2
+  share: ^2.0.1
+  youtube_player_flutter: ^8.0.0
 
 dev_dependencies:
   flutter_test:

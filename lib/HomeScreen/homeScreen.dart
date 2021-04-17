@@ -1,7 +1,8 @@
-import "package:bot_toast/bot_toast.dart";
 import "package:flutter/material.dart";
 
-import "Component/foodCard.dart";
+import "../DetailScreen/detailScreen.dart";
+
+import "Components/foodCard.dart";
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key, this.appTitle}) : super(key: key);
@@ -31,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          brightness: Brightness.light,
           elevation: 0,
           leading: IconButton(
             icon: const Icon(Icons.menu),
@@ -110,8 +112,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(36.0),
                         boxShadow: [
                           BoxShadow(
-                            offset: Offset(0, 10),
-                            blurRadius: 50.0,
+                            blurRadius: 10.0,
+                            offset: Offset(0, 5),
                             color: Colors.pink[300].withOpacity(0.25)
                           )
                         ]
@@ -184,6 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   backgroundColor: Colors.pink[300],
                                 ),
                                 onPressed: () {
+                                  //Debug message
                                   print("[INFO] Popular more button is pressed!");
                                 }
                               )
@@ -196,11 +199,17 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: <Widget> [
                                 FoodCard(
                                   image: "assets/images/foods/ramen.jpg",
-                                  title: "Ramen",
+                                  title: "Tonkotsu Ramen Noodle",
                                   country: "Japanese",
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 1 is pressed!");
+
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => DetailScreen()
+                                      )
+                                    );
                                   },
                                 ),
                                 FoodCard(
@@ -305,7 +314,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 FoodCard(
                                   image: "assets/images/foods/pizza.jpg",
                                   title: "Pizza",
-                                  country: "Italiana",
+                                  country: "Italy",
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 3 is pressed!");
