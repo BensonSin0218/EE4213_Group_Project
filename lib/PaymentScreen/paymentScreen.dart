@@ -3,6 +3,8 @@ import "package:flutter/material.dart";
 
 import "components/paymentCard.dart";
 
+import "../OrderedScreen/orderedScreen.dart";
+
 class PaymentScreen extends StatefulWidget {
   PaymentScreen({Key key, this.foodTitle, this.totalPrice}) : super(key: key);
 
