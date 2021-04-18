@@ -1,4 +1,5 @@
 import 'package:ee4213_group_project/HomeScreen/Components/foodCard.dart';
+import 'package:ee4213_group_project/OrderedScreen/orderedScreen.dart';
 import "package:flutter/material.dart";
 
 class PaymentScreen extends StatefulWidget {
@@ -180,9 +181,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           onPressed: selectedPaymentMethod ? () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => PaymentScreen(    //todo!
-                                  foodTitle: title,
-                                  totalPrice: widget.totalPrice,
+                                builder: (context) => OrderedScreen(
+                                  //todo
                                 )
                               )
                             );
