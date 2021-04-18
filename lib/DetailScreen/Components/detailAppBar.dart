@@ -1,7 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:share/share.dart';
+import "package:flutter/material.dart";
 
-AppBar detailAppBar(BuildContext context, String recipeName, String recipeURL, void toggleBookmark, bool isBookmarked) {
+AppBar detailAppBar(BuildContext context, String recipeName, String recipeURL,  bool isBookmarked, Function toggleBookmark, Function share) {
+  var iconButton = IconButton(
+          icon: Icon(
+            Icons.share_rounded, //share button
+            color: Colors.white,
+          ),
+          onPressed: () => share(recipeName, recipeURL)
+        );
   return AppBar(
     elevation: 0,
     backgroundColor: Colors.pink[300],
@@ -17,24 +23,10 @@ AppBar detailAppBar(BuildContext context, String recipeName, String recipeURL, v
         },
       ),
     ),
-    centerTitle: false,
-    // title: Text(
-    //   "Back".toUpperCase(),
-    //   style: TextStyle(
-    //     color: Colors.pink,
-    //   ),
-    // ),
     actions: [
       Material(
         color: Colors.transparent,
-        child: IconButton(
-          icon: Icon(
-            Icons.share_rounded, //share button
-            color: Colors.white,
-          ),
-          onPressed: () =>
-              Share.share("Check out the Recipe: \n$recipeName\n$recipeURL", subject: "Check out the Recipe: $recipeName"),
-        ),
+        child: iconButton,
       ),
       Material(
         color: Colors.transparent,
@@ -43,7 +35,7 @@ AppBar detailAppBar(BuildContext context, String recipeName, String recipeURL, v
             isBookmarked ? Icons.bookmark_rounded : Icons.bookmark_outline_rounded, //bookmark button
             color: Colors.white,
           ),
-          onPressed: () => toggleBookmark,
+          onPressed: () => toggleBookmark(),
         ),
       ),
     ],

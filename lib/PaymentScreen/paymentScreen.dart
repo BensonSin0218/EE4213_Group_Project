@@ -37,8 +37,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
           elevation: 0,
           leading: IconButton(
             icon: Icon(Icons.arrow_back_rounded),
-            color: Colors.white,
             iconSize: 26.0,
+            color: Colors.white,
             onPressed: () {
               Navigator.of(context).pop();
             }
@@ -63,7 +63,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           Colors.white.withOpacity(0.3),
                           BlendMode.difference
                         ),
-                        image: ExactAssetImage("assets/images/foods/ramen.jpg"),
+                        image: ExactAssetImage(
+                          "assets/images/foods/ramen.jpg"
+                        ),
                       ),
                     ),
                   ),

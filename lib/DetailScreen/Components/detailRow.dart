@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DetailRow extends StatefulWidget {
+  const DetailRow({Key key, this.name, this.amount, this.unit}) : super(key: key);
+
   final String name;
   final double amount;
   final String unit;
-
-  const DetailRow({Key key, this.name, this.amount, this.unit})
-      : super(key: key);
 
   @override
   _DetailRowState createState() => _DetailRowState();
