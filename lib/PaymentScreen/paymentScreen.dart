@@ -3,7 +3,8 @@ import "package:flutter/material.dart";
 
 import "components/paymentCard.dart";
 
-import "../OrderedScreen/orderedScreen.dart";
+import "../data/payment/paymentInformation.dart";
+import "../orderedScreen/orderedScreen.dart";
 
 class PaymentScreen extends StatefulWidget {
   PaymentScreen({Key key, this.foodTitle, this.totalPrice}) : super(key: key);
@@ -15,20 +16,23 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
-  String title, totalPrice, deliveryDate;
+  int paymentMethod;
+  String title, totalPrice, userAddress, deliveryDate;
   List<bool> selected;
 
   @override
   void initState() {
     super.initState();
 
+    paymentMethod = 0;
     title = widget.foodTitle;
     totalPrice = widget.totalPrice;
+    userAddress = "Room D, 30/F, ABC Building, 1 ABC Street, KLT, Kowloon, Hong Kong";
     deliveryDate = "";
     selected = List<bool>.filled(5, false, growable: true);
 
     // Set first payment method as default
-    selected[0] = true;
+    selected[paymentMethod] = true;
   }
 
   @override
@@ -120,41 +124,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         physics: BouncingScrollPhysics(),
                         child: Row(
                           children: <Widget> [
-                            PaymentCard(
-                              position: 0,
-                              title: "MasterCard",
-                              image: "assets/images/payment_methods/mastercard.png",
-                              selected: selected,
-                              tapFunction: selectPayment,
-                            ),
-                            PaymentCard(
-                              position: 1,
-                              title: "Visa",
-                              image: "assets/images/payment_methods/visa.png",
-                              selected: selected,
-                              tapFunction: selectPayment,
-                            ),
-                            PaymentCard(
-                              position: 2,
-                              title: "Alipay",
-                              image: "assets/images/payment_methods/alipay.png",
-                              selected: selected,
-                              tapFunction: selectPayment,
-                            ),
-                            PaymentCard(
-                              position: 3,
-                              title: "AmericanEx",
-                              image: "assets/images/payment_methods/americanEx.png",
-                              selected: selected,
-                              tapFunction: selectPayment,
-                            ),
-                            PaymentCard(
-                              position: 4,
-                              title: "PayPal",
-                              image: "assets/images/payment_methods/paypal.png",
-                              selected: selected,
-                              tapFunction: selectPayment,
-                            )
+                            for(int i = 0; i < 5; i++)
+                              PaymentCard(
+                                position: i,
+                                title: paymentName[i],
+                                image: paymentImage[i],
+                                selected: selected,
+                                tapFunction: selectPayment,
+                              )
                           ]
                         )
                       )
@@ -181,7 +158,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       height: 10.0
                     ),
                     Text(
-                      "Room D, 30/F, ABC Building, 1 ABC Street, KLT, Kowloon, Hong Kong",
+                      userAddress,
                       style: TextStyle(
                         fontSize: 15.0,
                         color: Colors.black
@@ -342,14 +319,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       // Debug message
                       print("[INFO] Pay button is pressed!");
 
-                      BotToast.showNotification(
-                        title: (_) => Text(
-                          "Done!",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => OrderedScreen(
+                            paymentMethod: paymentMethod,
+                            address: userAddress,
+                            deliveryDate: deliveryDate,
                           )
                         )
                       );
@@ -391,7 +366,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
       selected[position] = true;
     });
 
+    paymentMethod = position;
+
     // Debug message
     print("[INFO] selected: $selected");
+    print("[INFO] paymentMethod: $paymentMethod");
   }
 }

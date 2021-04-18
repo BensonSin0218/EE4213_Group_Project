@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-class OrderDetailRow extends StatelessWidget {
-  final String title;
-  final String content;
 
-  const OrderDetailRow({
-    Key key, this.title, this.content,
-  }) : super(key: key);
+class OrderDetailRow extends StatelessWidget {
+  OrderDetailRow({Key key, this.title, this.content}) : super(key: key);
+
+  final String title, content;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +22,7 @@ class OrderDetailRow extends StatelessWidget {
               ),
             ),
           ),
+          Spacer(),
           Expanded(
             flex: 2,
             child: Text(
@@ -31,11 +30,11 @@ class OrderDetailRow extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyText2.copyWith(
                 color: Colors.blueGrey,
                 fontSize: 18.0,
-              ),
-            ),
-          ),
-        ],
-      ),
+              )
+            )
+          )
+        ]
+      )
     );
   }
 }

@@ -3,7 +3,7 @@ import "package:flutter/material.dart";
 
 import "SplashScreen/splashScreen.dart";
 
-const String APPTITLE = "Day Day Cooking";
+import "data/appInfo.dart";
 
 void main() {
   runApp(MyApp());
@@ -16,10 +16,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: APPTITLE,
       theme: ThemeData(
+        primarySwatch: Colors.pink,
         primaryColor: Colors.pink[300],
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
-      home: DayDayCooking(appTitle: APPTITLE),
+      home: DayDayCooking(),
       builder: BotToastInit(),
       navigatorObservers: [BotToastNavigatorObserver()]
     );
@@ -27,9 +28,7 @@ class MyApp extends StatelessWidget {
 }
 
 class DayDayCooking extends StatefulWidget {
-  DayDayCooking({Key key, this.appTitle}) : super(key: key);
-
-  final String appTitle;
+  DayDayCooking({Key key}) : super(key: key);
 
   @override
   _DayDayCookingState createState() => _DayDayCookingState();
@@ -39,7 +38,7 @@ class _DayDayCookingState extends State<DayDayCooking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SplashScreen(appTitle: widget.appTitle),
+      body: SplashScreen(),
     );
   }
 }

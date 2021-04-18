@@ -1,13 +1,12 @@
 import "package:flutter/material.dart";
 
+import "../data/appInfo.dart";
 import "../DetailScreen/detailScreen.dart";
 
 import "Components/foodCard.dart";
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key, this.appTitle}) : super(key: key);
-
-  final String appTitle;
+  HomeScreen({Key key}) : super(key: key);
 
   @override
   _HomeScreenState createState()=> _HomeScreenState();
@@ -46,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           centerTitle: false,
           title: Text(
-            widget.appTitle,
+            APPTITLE,
             style: TextStyle(
               fontFamily: "Lobster"
             ),
