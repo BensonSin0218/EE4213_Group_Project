@@ -43,12 +43,10 @@ class FoodItem extends StatelessWidget {
         Row(
           children: <Widget> [
             IconButton(
+              icon: Icon(Icons.remove_circle_outline_rounded),
+              iconSize: 30.0,
+              color: amounts[itemNumber] == 0 ? Colors.blueGrey[200] : Colors.pink,
               splashRadius: 15.0,
-              icon: Icon(
-                Icons.remove_circle_outline_rounded,
-                size: 30.0,
-                color: amounts[itemNumber] == 0 ? Colors.blueGrey[200] : Colors.pink,
-              ),
               onPressed: () => subItem(itemNumber)
             ),
             Text(
@@ -60,12 +58,10 @@ class FoodItem extends StatelessWidget {
               )
             ),
             IconButton(
+              icon: Icon(Icons.add_circle_outline_rounded,),
+              iconSize: 30.0,
+              color: Colors.pink,
               splashRadius: 15.0,
-              icon: Icon(
-                Icons.add_circle_outline_rounded,
-                size: 30.0,
-                color: Colors.pink,
-              ),
               onPressed: () => addItem(itemNumber)
             ),
           ],

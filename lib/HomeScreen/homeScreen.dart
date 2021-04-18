@@ -35,11 +35,14 @@ class _HomeScreenState extends State<HomeScreen> {
           brightness: Brightness.light,
           elevation: 0,
           leading: IconButton(
-            splashRadius: 26.0,
-            icon: const Icon(Icons.menu),
-            color: Colors.white,
+            icon: Icon(Icons.menu),
             iconSize: 26.0,
-            onPressed: () {}
+            color: Colors.white,
+            splashRadius: 26.0,
+            onPressed: () {
+              // Debug message
+              print("[INFO] Menu button is pressed!");
+            }
           ),
           centerTitle: false,
           title: Text(
@@ -47,8 +50,8 @@ class _HomeScreenState extends State<HomeScreen> {
             style: TextStyle(
               fontFamily: "Lobster"
             ),
-            textAlign: TextAlign.right,
-          ),
+            textAlign: TextAlign.right
+          )
         ),
         body: Column(
           children: <Widget> [
@@ -90,9 +93,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           onPressed: () {
                             // Debug message
                             print("[INFO] User icon is pressed!");
-                          },
+                          }
                         )
-                      ],
+                      ]
                     )
                   ),
                   Positioned(
@@ -131,22 +134,31 @@ class _HomeScreenState extends State<HomeScreen> {
                                 enabledBorder: InputBorder.none,
                                 focusedBorder: InputBorder.none,
                               ),
-                              onChanged: (value) {},
+                              onChanged: (value) {
+                                // Debug message
+                                print("[INFO] value: $value");
+
+                                // Debug message
+                                print("[INFO] Search bar is using!");
+                              }
                             )
                           ),
                           IconButton(
-                            splashRadius: 20.0,
                             icon: Icon(Icons.search),
                             iconSize: 20,
                             color: Colors.pink[300],
-                            onPressed: (){},
+                            splashRadius: 20.0,
+                            onPressed: () {
+                              // Debug message
+                              print("[INFO] Search button is pressed!");
+                            }
                           )
-                        ],
-                      ),
-                    ),
+                        ]
+                      )
+                    )
                   )
-                ],
-              ),
+                ]
+              )
             ),
             // Popular Section
             Container(
@@ -174,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold
                                   )
-                                ),
+                                )
                               ),
                               Spacer(),
                               TextButton(
@@ -213,7 +225,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         builder: (context) => DetailScreen()
                                       )
                                     );
-                                  },
+                                  }
                                 ),
                                 FoodCard(
                                   image: "assets/images/foods/400coffee.jpg",
@@ -222,7 +234,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 2 is pressed!");
-                                  },
+                                  }
                                 ),
                                 FoodCard(
                                   image: "assets/images/foods/cheesecake.jpg",
@@ -231,7 +243,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 3 is pressed!");
-                                  },
+                                  }
                                 ),
                                 FoodCard(
                                   image: "assets/images/foods/sweetSourPork.jpg",
@@ -240,12 +252,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 4 is pressed!");
-                                  },
+                                  }
                                 )
-                              ],
-                            ),
+                              ]
+                            )
                           )
-                        ],
+                        ]
                       )
                     )
                   ),
@@ -271,7 +283,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold
                                   )
-                                ),
+                                )
                               ),
                               Spacer(),
                               TextButton(
@@ -303,7 +315,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 1 is pressed!");
-                                  },
+                                  }
                                 ),
                                 FoodCard(
                                   image: "assets/images/foods/chickenPot.jpg",
@@ -312,7 +324,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 2 is pressed!");
-                                  },
+                                  }
                                 ),
                                 FoodCard(
                                   image: "assets/images/foods/pizza.jpg",
@@ -321,7 +333,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 3 is pressed!");
-                                  },
+                                  }
                                 ),
                                 FoodCard(
                                   image: "assets/images/foods/swissChickenWings.jpg",
@@ -330,19 +342,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                   tapFunction: () {
                                     // Debug message
                                     print("[INFO] Food Card 4 is pressed!");
-                                  },
+                                  }
                                 )
-                              ],
-                            ),
+                              ]
+                            )
                           )
-                        ],
+                        ]
                       )
                     )
                   )
                 ]
               )
             )
-          ],
+          ]
         )
       ),
       onWillPop: () async {
@@ -351,7 +363,7 @@ class _HomeScreenState extends State<HomeScreen> {
           return false;
         }
         return true;
-      },
+      }
     );
   }
 }

@@ -1,4 +1,3 @@
-import 'package:ee4213_group_project/Widgets/pinkButton.dart';
 import "package:flutter/material.dart";
 import "package:share/share.dart";
 import "package:youtube_player_flutter/youtube_player_flutter.dart";
@@ -7,6 +6,7 @@ import "../Data/Ramen/ramenInformation.dart";
 
 import "Components/detailAppBar.dart";
 import "Components/detailRow.dart";
+import "components/pinkButton.dart";
 
 import "../PurchaseScreen/purchaseScreen.dart";
 

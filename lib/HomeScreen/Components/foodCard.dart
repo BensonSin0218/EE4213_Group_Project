@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 
 class FoodCard extends StatelessWidget {
-  const FoodCard({Key key, this.image, this.title, this.country, this.tapFunction}) : super(key: key);
+  FoodCard({Key key, this.image, this.title, this.country, this.tapFunction}) : super(key: key);
 
   final String image, title, country;
   final Function tapFunction;
