@@ -1,9 +1,7 @@
 import "package:bot_toast/bot_toast.dart";
+import "package:ee4213_group_project/data/appInfo.dart";
+import "package:ee4213_group_project/SplashScreen/splashScreen.dart";
 import "package:flutter/material.dart";
-
-import "SplashScreen/splashScreen.dart";
-
-import "data/appInfo.dart";
 
 void main() {
   runApp(MyApp());

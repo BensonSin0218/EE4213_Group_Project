@@ -1,7 +1,6 @@
+import "package:ee4213_group_project/data/appInfo.dart";
+import "package:ee4213_group_project/homeScreen/homeScreen.dart";
 import "package:flutter/material.dart";
-
-import "../data/appInfo.dart";
-import "../homeScreen/homeScreen.dart";
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key key}) : super(key: key);

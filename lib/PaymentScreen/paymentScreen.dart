@@ -1,10 +1,9 @@
 import "package:bot_toast/bot_toast.dart";
+import "package:ee4213_group_project/data/payment/paymentInformation.dart";
+import "package:ee4213_group_project/orderedScreen/orderedScreen.dart";
 import "package:flutter/material.dart";
 
 import "components/paymentCard.dart";
-
-import "../data/payment/paymentInformation.dart";
-import "../orderedScreen/orderedScreen.dart";
 
 class PaymentScreen extends StatefulWidget {
   PaymentScreen({Key key, this.foodTitle, this.totalPrice}) : super(key: key);

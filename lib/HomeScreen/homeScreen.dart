@@ -1,9 +1,8 @@
+import "package:ee4213_group_project/data/appInfo.dart";
+import "package:ee4213_group_project/DetailScreen/detailScreen.dart";
 import "package:flutter/material.dart";
 
-import "../data/appInfo.dart";
-import "../DetailScreen/detailScreen.dart";
-
-import "Components/foodCard.dart";
+import "components/foodCard.dart";
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);

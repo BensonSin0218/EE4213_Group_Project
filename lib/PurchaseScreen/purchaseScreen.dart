@@ -1,8 +1,7 @@
 import "package:bot_toast/bot_toast.dart";
+import "package:ee4213_group_project/data/foods/ramen/ramenInformation.dart";
+import "package:ee4213_group_project/paymentScreen/paymentScreen.dart";
 import "package:flutter/material.dart";
-
-import "../Data/Ramen/ramenInformation.dart";
-import "../PaymentScreen/paymentScreen.dart";
 
 import "Components/foodItem.dart";
 

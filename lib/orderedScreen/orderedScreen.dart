@@ -1,11 +1,10 @@
+import "package:ee4213_group_project/data/payment/paymentInformation.dart";
+import "package:ee4213_group_project/homeScreen/homeScreen.dart";
+import "package:ee4213_group_project/loadingScreen/loadingScreen.dart";
 import "package:flutter/material.dart";
 
 import "components/orderDetailRow.dart";
 import "components/pinkButton.dart";
-
-import "../data/payment/paymentInformation.dart";
-import "../homeScreen/homeScreen.dart";
-import "../loadingScreen/loadingScreen.dart";
 
 class OrderedScreen extends StatefulWidget {
   OrderedScreen({Key key, this.paymentMethod, this.address, this.deliveryDate}) : super(key: key);
