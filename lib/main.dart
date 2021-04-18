@@ -1,7 +1,6 @@
 import "package:bot_toast/bot_toast.dart";
 import "package:flutter/material.dart";
 
-import 'DetailScreen/detailScreen.dart';
 import "SplashScreen/splashScreen.dart";
 
 const String APPTITLE = "Day Day Cooking";

@@ -35,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
           brightness: Brightness.light,
           elevation: 0,
           leading: IconButton(
+            splashRadius: 26.0,
             icon: const Icon(Icons.menu),
             color: Colors.white,
             iconSize: 26.0,
@@ -133,10 +134,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               onChanged: (value) {},
                             )
                           ),
-                          Icon(
-                            Icons.search,
-                            size: 20,
+                          IconButton(
+                            splashRadius: 20.0,
+                            icon: Icon(Icons.search),
+                            iconSize: 20,
                             color: Colors.pink[300],
+                            onPressed: (){},
                           )
                         ],
                       ),

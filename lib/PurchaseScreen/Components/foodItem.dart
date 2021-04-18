@@ -43,6 +43,7 @@ class FoodItem extends StatelessWidget {
         Row(
           children: <Widget> [
             IconButton(
+              splashRadius: 15.0,
               icon: Icon(
                 Icons.remove_circle_outline_rounded,
                 size: 30.0,
@@ -59,6 +60,7 @@ class FoodItem extends StatelessWidget {
               )
             ),
             IconButton(
+              splashRadius: 15.0,
               icon: Icon(
                 Icons.add_circle_outline_rounded,
                 size: 30.0,

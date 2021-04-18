@@ -73,6 +73,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
           brightness: Brightness.dark,
           elevation: 0,
           leading: IconButton(
+            splashRadius: 26.0,
             icon: Icon(Icons.arrow_back_rounded),
             iconSize: 26.0,
             color: Colors.white,
@@ -122,7 +123,6 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
             Container(
               height: _bottomHeight,
               child: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
                 physics: BouncingScrollPhysics(),
                 padding: EdgeInsets.symmetric(
                   vertical: 10.0,
@@ -418,6 +418,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                             MaterialPageRoute(
                               builder: (context) => PaymentScreen(
                                 foodTitle: title,
+                                totalPrice: totalPrice(),
                               )
                             )
                           );
@@ -425,8 +426,8 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                         : () {
 
                         },
-                      )
-                    )
+                      ),
+                    ),
                   ],
                 ),
               ),
